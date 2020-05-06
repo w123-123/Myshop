@@ -6,7 +6,7 @@
         {% block title %}
         {% endblock %}
     </title>
-    <link rel="stylesheet" href="//static/login.css">
+    <link rel="stylesheet" href="/static/login.css">
     <link rel="stylesheet" href="/static/index.css">
     <link rel="stylesheet" href="/static/detail.css">
     <link rel="stylesheet" href="/static/carts.css">
@@ -27,9 +27,14 @@
             <li class="sub"><a href="http://127.0.0.1:8000/cart/cart.html">我的购物车</a></li>
         </ul>
 
+        {% if user %}
 
-            <div class="register"><a href="http://127.0.0.1:8000/user/register">免费注册</a></div>
-            <div class="sign"><a href="http://127.0.0.1:8000/user/login">登录</a></div>
+            <div class="register">欢迎<a href="/user/center/">{{ user }}</a></div>
+        {% else %}
+            <div class="register"><a href="/user/register/">免费注册</a></div>
+            <div class="sign"><a href="/user/login/">登录</a></div>
+        {% endif %}
+
 
 
 
